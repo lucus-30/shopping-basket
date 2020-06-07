@@ -60,4 +60,22 @@ describe("Basket reducer", () => {
       },
     })
   })
+  it("should handle SET_QUANTITY", () => {
+    expect(
+      reducer(undefined, {
+        type: types.SET_QUANTITY,
+        payload: {
+          id: 1,
+          amount: 11,
+        }
+      }),
+    ).toEqual({
+      productIds: [1, 2, 3],
+      quantityById: {
+        1: 11,
+        2: 2,
+        3: 1,
+      },
+    })
+  })
 })

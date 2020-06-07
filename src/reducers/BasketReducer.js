@@ -23,6 +23,9 @@ export default (state = initialState, { type, payload }) => {
         break
       case types.DECREMENT_QUANTITY:
         draft.quantityById[payload.id] = dec(draft.quantityById[payload.id])
+        break
+      case types.SET_QUANTITY:
+        draft.quantityById[payload.id] = payload.amount
         break 
       default:
         return draft
