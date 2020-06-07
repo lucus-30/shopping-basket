@@ -1,5 +1,4 @@
 import produce from "immer"
-import * as types from "constants/BasketActionTypes"
 
 const initialState = {
   items: [
