@@ -44,4 +44,20 @@ describe("Basket reducer", () => {
       },
     })
   })
+
+  it("should handle DECREMENT_QUANTITY", () => {
+    expect(
+      reducer(undefined, {
+        type: types.DECREMENT_QUANTITY,
+        payload: { id: 1 }
+      }),
+    ).toEqual({
+      productIds: [1, 2, 3],
+      quantityById: {
+        1: 2,
+        2: 2,
+        3: 1,
+      },
+    })
+  })
 })
