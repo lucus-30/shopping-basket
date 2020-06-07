@@ -1,36 +1,31 @@
-import produce from "immer"
-import * as types from "constants/BasketActionTypes"
+import reducer from "./ProductReducer"
+import expect from "expect"
 
-const initialState = {
-  itema: [
-    {
-      id: 1,
-      title: "Woodley Leather Jacket",
-      price: 199.0
-    },
-    {
-      id: 2,
-      title: "Salco Chinos",
-      price: 199.0
-    },
-    {
-      id: 3,
-      title: "Rook Chelsea Boot",
-      price: 199.0
-    },
-  ],
-  index: {
-    1: 0,
-    2: 1,
-    3: 2
-  },
-}
-
-export default (state = initialState, { type, payload }) => {
-  return produce(state, draft => {
-    switch (type) {
-      default:
-        return draft
-    }
+describe("Product reducer", () => {
+  it("should return the intial state", () => {
+    expect(reducer(undefined, {})).toEqual({
+      items: [
+        {
+          id: 1,
+          title: "Woodley Leather Jacket",
+          price: 199.0
+        },
+        {
+          id: 2,
+          title: "Salco Chinos",
+          price: 199.0
+        },
+        {
+          id: 3,
+          title: "Rook Chelsea Boot",
+          price: 199.0
+        },
+      ],
+      index: {
+        1: 0,
+        2: 1,
+        3: 2
+      },
+    })
   })
-}
+})
