@@ -1,26 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+import { hot } from "react-hot-loader"
+import { Provider } from "react-redux"
+import BasketContainer from "containers/BasketContainer"
 
-function App() {
+const App = ({ store }) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Provider store={store}>
+      <div className="app">
+        <BasketContainer />
+      </div>
+    </Provider>
+  )
 }
 
-export default App;
+export default hot(module)(App)
