@@ -26,7 +26,11 @@ export default (state = initialState, { type, payload }) => {
         break
       case types.SET_QUANTITY:
         draft.quantityById[payload.id] = payload.amount
-        break 
+        break
+      case types.CLEAR_BASKET:
+        draft.productIds = []
+        draft.quantityById = {}
+        break
       default:
         return draft
     }

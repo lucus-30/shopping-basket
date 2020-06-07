@@ -60,6 +60,7 @@ describe("Basket reducer", () => {
       },
     })
   })
+
   it("should handle SET_QUANTITY", () => {
     expect(
       reducer(undefined, {
@@ -76,6 +77,15 @@ describe("Basket reducer", () => {
         2: 2,
         3: 1,
       },
+    })
+  })
+
+  it("should handle CLEAR_BASKET", () => {
+    expect(
+      reducer(undefined, { type: types.CLEAR_BASKET })
+    ).toEqual({
+      productIds: [],
+      quantityById: {},
     })
   })
 })
