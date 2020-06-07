@@ -17,6 +17,9 @@ export default (state = initialState, { type, payload }) => {
       case types.REMOVE_PRODUCT:
         draft.productIds = reject(equals(payload.id), draft.productIds)
         delete draft.quantityById[payload.id]
+        break
+      case types.INCREMENT_QUANTITY:
+        draft.quantityById[payload.id] = inc(draft.quantityById[payload.id])
         break 
       default:
         return draft
