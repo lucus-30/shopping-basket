@@ -1,0 +1,192 @@
+.basket {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #fff;
+  margin-top: 3rem;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.25), 0 15px 12px rgba(0, 0, 0, 0.12);
+
+  &Header {
+    padding: 3rem 4rem 0;
+  }
+
+  &Heading {
+    font-size: 28px;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+  }
+
+  &Body {
+    padding: 1.5rem 3rem;
+  }
+
+  &Footer {
+    padding: 1.5rem 4rem 4.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &InfoMessage {
+    color: #2a6ead;
+    display: flex;
+    justify-content: center;
+    margin: 2.5rem 0;
+    align-items: center;
+    font-weight: 700;
+
+    i {
+      font-size: 28px;
+      margin-right: 0.5rem;
+    }
+  }
+
+  &Subtotal {
+    display: flex;
+    font-weight: 700;
+    align-items: baseline;
+
+    span:first-of-type {
+      color: #666;
+      margin-right: 0.5rem;
+    }
+
+    span:last-of-type {
+      color: #333;
+      font-size: 28px;
+    }
+  }
+
+  &Items {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &Button {
+    color: #2a6ead;
+    display: flex;
+    font-weight: 700;
+    background: none;
+    padding: 0.75rem 1rem;
+    border: 2px solid #fff;
+    align-items: center;
+    letter-spacing: 0.5px;
+
+    i {
+      color: #333;
+      font-size: 20px;
+      margin-right: 0.5rem;
+    }
+
+    &:hover {
+      cursor: pointer;
+      border-color: #ccc;
+    }
+  }
+
+  &Item {
+    display: flex;
+    align-items: center;
+
+    &Thumb,
+    &Description,
+    &Quantity,
+    &Button,
+    &Price {
+      flex: 0 auto;
+      margin: 0.75rem 1.5rem;
+    }
+
+    &Thumb {
+      img {
+        width: 160px;
+        height: 200px;
+        object-fit: cover;
+      }
+    }
+
+    &Description {
+      flex: 1 auto;
+    }
+
+    &Title {
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 0;
+      line-height: 1.5;
+    }
+
+    &Code {
+      color: #999;
+    }
+
+    &Button {
+      background: none;
+      border: none;
+      color: #999;
+      transition: all 0.2s ease;
+      border-radius: 50%;
+      padding: 8px;
+
+      &:hover {
+        cursor: pointer;
+        background-color: #f4f4f4;
+      }
+
+      i {
+        font-size: 28px;
+      }
+    }
+
+    &Price {
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+.quantity {
+  display: flex;
+
+  button {
+    transition: all 0.2s ease;
+    background: none;
+    padding: 0.75rem;
+    border: 2px solid #fff;
+
+    &:first-of-type {
+      border-right: none;
+    }
+
+    &:last-of-type {
+      border-left: none;
+    }
+
+    &:hover {
+      cursor: pointer;
+      border-color: #ccc;
+      background-color: #f4f4f4;
+    }
+  }
+
+  input {
+    background-color: none;
+    border-radius: 0;
+    border: 2px solid #ccc;
+    width: 40px;
+    padding: 0.5rem;
+    text-align: center;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    &[type="number"] {
+      -moz-appearance: textfield;
+    }
+  }
+}
